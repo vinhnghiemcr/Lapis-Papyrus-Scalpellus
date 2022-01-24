@@ -9,3 +9,7 @@ let user = {
 let computer = {
   choice: null
 }
+//function computerChooses will chooses gameOptions for the computer
+const computerChooses = () => {
+    return gameOptions[Math.floor(Math.random()*gameOptions.length)];
+  }
