@@ -42,3 +42,6 @@ const compareChoices = (userChoice, computerChoice) => {
               }
     };
     }
+
+//compare the user's choice and computer's choice
+compareChoices(user.choice, computer.choice);
