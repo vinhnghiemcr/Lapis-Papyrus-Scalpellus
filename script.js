@@ -14,8 +14,31 @@ const computerChooses = () => {
   return gameOptions[Math.floor(Math.random()*gameOptions.length)];
 }
 //playerChoice and compChoice will store the option which player and computer choice 
-user.choice = gameOptions[0];
-computer.choice = gameOptions[0];//computerChooses();
+//user.choice = null;
+//computer.choice = computerChooses();
+
+//function play() will initialize the computer's choice and then compare with player's choice to decide who is winner
+function play(){
+  computer.choice = computerChooses();
+  compareChoices(user.choice, computer.choice);
+}
+
+//Responce for event where player clicks on the  Lapis button
+document.querySelector('#rock').onclick = function() {
+  user.choice = gameOptions[0];
+  play();
+};
+//Responce for event where player clicks on the  Papyrus button
+document.querySelector('#paper').onclick = function() {
+  user.choice = gameOptions[1];
+  play();
+};
+//Responce for event where player clicks on the  Scalpellus button
+document.querySelector('#scissor').onclick = function() {
+  user.choice = gameOptions[2];
+  play();
+};
+
 
 //function display() will add a paragraph element to the end of the body
 //with the result of the compareChoices() function
@@ -53,4 +76,4 @@ if (userChoice == gameOptions[0]){
 }
 
 //compare the user's choice and computer's choice
-compareChoices(user.choice, computer.choice);
+//compareChoices(user.choice, computer.choice);
