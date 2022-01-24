@@ -23,27 +23,35 @@ function play(){
   compareChoices(user.choice, computer.choice);
 }
 
+
+
 //Responce for event where player clicks on the  Lapis button
 document.querySelector('#rock').onclick = function() {
   user.choice = gameOptions[0];
+  clear();
   play();
 };
 //Responce for event where player clicks on the  Papyrus button
 document.querySelector('#paper').onclick = function() {
   user.choice = gameOptions[1];
+  clear();
   play();
 };
 //Responce for event where player clicks on the  Scalpellus button
 document.querySelector('#scissor').onclick = function() {
   user.choice = gameOptions[2];
+  clear();
   play();
 };
-
 
 //function display() will add a paragraph element to the end of the body
 //with the result of the compareChoices() function
 const display = (text) => {
-  document.querySelector('body').append(document.createElement("p").innerHTML = (text).toString());
+  document.querySelector('#screen').append(document.createElement("div").innerContent = (text).toString());
+}
+//function clear() will clear the previous relult if it has any
+const clear = () => {
+  document.querySelector('#screen').innerHTML = "";
 }
 
 //Function compareChoices()  determine who wins
